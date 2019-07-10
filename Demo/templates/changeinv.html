@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+    <link rel="shortcut icon" href="#"/>
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>新兴齿轮</title>
+    {% endif %}
+</head>
+<body>
+<div class="container" id="app">
+    <div class="jumbotron">
+        <h1 class="text-center">Hello,World</h1>
+        <p class="text-right">It's a website for son of qian about change inventory and venandinv</p>
+    </div>
+    <div class="row">
+
+        <div class="col-3">
+            <lable for="cinvcode">存货编码:</lable>
+            <input type="text" value="" id="cinvcode">
+        </div>
+        <div class="col-2">
+            <button @click="iquery" class="btn btn-outline-danger w-100">查询</button>
+        </div>
+
+    </div>
+    <hr style="margin: 10px">
+    <div class="row">
+        <div class="col-2">
+            <lable for="cinvcode">存货名称:</lable>
+            <input type="text" value="" id="cinvname">
+        </div>
+        <div class="col-2">
+            <lable for="cinvstd">规格型号:</lable>
+            <input type="text" value="" id="cinvstd">
+        </div>
+        <div class="col-2">
+            <lable for="cinvaddcode">存货代码:</lable>
+            <input type="text" value="" id="cinvaddcode">
+        </div>
+        <div class="col-2">
+            <lable for="ccomunitname">计量单位:</lable>
+            <input type="text" value="" id="ccomunitname">
+        </div>
+        <div class="col-2">
+            <lable for="iInvAdvance">提前期:</lable>
+            <input type="text" value="" id="iInvAdvance">
+        </div>
+
+
+    </div>
+
+    <div class="text-center">
+        <p id="result">
+        <h3 style="color: red">[[ result ]]</h3></p>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <button @click="changeinv" class="btn btn-outline-danger w-100">提交</button>
+        </div>
+    </div>
+
+
+</div>
+<script>
+    window.onload = function () {
+        var vm = new Vue({
+            delimiters: ["[[", "]]"],
+            el: "#app",
+            data: {
+                result: null
+            },
+            methods: {
+                changeinv: function () {
+                    var cinvcode = document.getElementById('cinvcode').value
+                    var cinvname = document.getElementById('cinvname').value
+                    var cinvstd = document.getElementById('cinvstd').value
+                    var cinvaddcode = document.getElementById('cinvaddcode').value
+                    var iInvAdvance = document.getElementById('iInvAdvance').value
+                    this.$http.post('/home/change/', {
+                        cinvcode: cinvcode,
+                        cinvname: cinvname,
+                        cinvstd: cinvstd,
+                        cinvaddcode: cinvaddcode,
+                        iInvAdvance: iInvAdvance
+                    }, {emulateJSON: true}).then(function (res) {
+                        console.log(res)
+                        if (res.body == 'fail') {
+                            this.result = '修改失败'
+                        } else {
+                            var data = res.body[0]
+                            document.getElementById('cinvcode').value = ''
+                            document.getElementById('cinvname').value = ''
+                            document.getElementById('cinvstd').value = ''
+                            document.getElementById('cinvaddcode').value = ''
+                            document.getElementById('iInvAdvance').value = ''
+                            this.result = '存货编码' + data.cinvcode + '修改成功'
+                        }
+
+                    }, function (res) {
+                        console.log(res.status);
+                        this.result = '修改失败'
+                    });
+                },
+                iquery: function () {
+                    var cinvcode = document.getElementById('cinvcode').value
+                    this.$http.post('/home/iquery/', {
+                        cinvcode: cinvcode
+                    }, {emulateJSON: true}).then(function (res) {
+                        console.log(res)
+                        var data = res.body[0]
+                        document.getElementById('cinvname').value = data.cinvname
+                        document.getElementById('cinvstd').value = data.cinvstd
+                        document.getElementById('cinvaddcode').value = data.cinvaddcode
+                        document.getElementById('iInvAdvance').value = data.iInvAdvance
+                        document.getElementById('ccomunitname').value = data.ccomunitname
+                    }, function (res) {
+                        console.log(res.status);
+                    });
+                }
+
+            }
+        })
+    }
+</script>
+</body>
+</html>

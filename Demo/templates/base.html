@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- ÐÂ Bootstrap4 ºËÐÄ CSS ÎÄ¼þ -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- jQueryÎÄ¼þ¡£Îñ±ØÔÚbootstrap.min.js Ö®Ç°ÒýÈë -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- popper.min.js ÓÃÓÚµ¯´°¡¢ÌáÊ¾¡¢ÏÂÀ­²Ëµ¥ -->
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <!-- ×îÐÂµÄ Bootstrap4 ºËÐÄ JavaScript ÎÄ¼þ -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+    <link rel="shortcut icon" href="#"/>
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>新兴齿轮</title>
+    {% endif %}
+</head>
+<body>
+<div class="container-fluid" id="app">
+    {% block content %}
+    {% endblock %}
+</div>
+<script>
+    {% block script %}
+    {% endblock %}
+</script>
+</body>
+</html>

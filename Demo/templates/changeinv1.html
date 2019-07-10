@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- ÐÂ Bootstrap4 ºËÐÄ CSS ÎÄ¼þ -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- jQueryÎÄ¼þ¡£Îñ±ØÔÚbootstrap.min.js Ö®Ç°ÒýÈë -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- popper.min.js ÓÃÓÚµ¯´°¡¢ÌáÊ¾¡¢ÏÂÀ­²Ëµ¥ -->
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <!-- ×îÐÂµÄ Bootstrap4 ºËÐÄ JavaScript ÎÄ¼þ -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+    <link rel="shortcut icon" href="#"/>
+    <title>Ö÷Ò³</title>
+</head>
+<body>
+<div class="container-fluid" id="app">
+    {#    ±íÍ·    #}
+    <div class="jumbotron text-center">
+        <h1>ÐÂÐË</h1>
+        <p class="text-right">just a test website about erp inventory</p>
+    </div>
+    {#    µ¼º½     #}
+    <div class="row">
+
+        <div class="col-3 offset-8 text-right" style="padding-top: 5px" id="search">
+            <lable for="search">´æ»õ´úÂë£º</lable>
+            <input type="text" id="search_inv" placeholder="ÊäÈë´æ»õ±àÂëËÑË÷">
+        </div>
+        <div class="col-1  ">
+            <button class="btn btn-outline-secondary " @click="query_oneinv">ËÑÒ»ËÑ</button>
+        </div>
+    </div>
+    {#    Ò³ÃæBODY²¼¾Ö#}
+    <div class="row ">
+        {#    <µÚÒ»¼¶>     #}
+        <div class="col-1 ">
+
+            <table class="table table-striped table-hover table-sm">
+                <thead class="thead-dark">
+                <tr>
+                    <th>µÚÒ»¼¶</th>
+                </tr>
+                </thead>
+                {% for one in ones %}
+                    <tbody>
+                    <tr @click="query_second({{ one.cinvccode }})">
+                        <td>{{ one.cinvcname }}</td>
+                    </tr>
+                    </tbody>
+                    {#                <p @click="query_second({{ one.cinvccode }})">{{ one.cinvcname }}</p>#}
+                {% endfor %}
+            </table>
+        </div>
+        {#    <µÚ¶þ¼¶>     #}
+        <div class="col-2 pre-scrollable" style="height: 800px">
+            <table class="table table-striped table-hover table-sm">
+                <thead class="thead-dark">
+                <tr>
+                    <th>µÚ¶þ¼¶</th>
+                </tr>
+                </thead>
+
+                <tbody v-for="second in seconds">
+                <tr @click="query_third([[ second.cinvccode]])">
+                    <td> [[ second.cinvcname ]]</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+        {#    <µÚÈý¼¶>     #}
+        <div class="col-1 pre-scrollable">
+            <table class="table table-striped table-hover table-sm">
+                <thead class="thead-dark">
+                <tr>
+                    <th>µÚÈý¼¶</th>
+                </tr>
+                </thead>
+                <tbody v-for="third in thirds">
+                <tr @click="query_inventory([[ third.cinvccode]])">
+                    <td> [[ third.cinvcname ]]</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        {#    <½á¹û>     #}
+        <div class="col-8 text-center">
+            <table class="table table-striped table-hover table-sm">
+                <thead class="thead-dark">
+                <tr>
+                    <th>´æ»õ±àÂë</th>
+                    <th>´æ»õÃû³Æ</th>
+                    <th>¹æ¸ñÐÍºÅ</th>
+                    <th>´æ»õ´úÂë</th>
+                    <th>²ÄÖÊ</th>
+                    <th>²Ù×÷</th>
+                </tr>
+                </thead>
+                <tbody v-for="inventory in inventorys">
+                <tr>
+                    <td>[[ inventory.cinvcode ]]</td>
+                    <td>[[ inventory.cinvname ]]</td>
+                    <td>[[ inventory.cinvstd ]]</td>
+                    <td>[[ inventory.cinvaddcode ]]</td>
+                    <td>[[ inventory.cz ]]</td>
+                    <td>
+                        <label>
+                            <a :href="'/edit_inv?cinvcode='+inventory.cinvcode">
+                                <button class="btn btn-outline-danger">±à¼­</button>
+                            </a>
+                        </label>
+                        <label>
+                            <a :href="'/inv_history?cinvcode='+inventory.cinvcode">
+                                <button class="btn btn-outline-danger">¸ü¶à</button>
+                            </a>
+                        </label>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+<script>
+    window.onload = function () {
+        var vm = new Vue({
+            delimiters: ["[[", "]]"],
+            el: "#app",
+            data: {
+                seconds: null,
+                thirds: null,
+                inventorys: null
+            },
+            methods: {
+                query_second: function (cinvccode) {
+                    this.$http.get('/query_second?cinvccode=' + cinvccode).then(
+                        function (res) {
+                            console.log(res)
+                            this.seconds = res.body
+                        }, function (res) {
+                            console.log(res)
+                        }
+                    )
+                },
+                query_third: function (cinvccode) {
+                    this.$http.get('/query_third?cinvccode=' + cinvccode).then(
+                        function (res) {
+                            console.log(res)
+                            this.thirds = res.body
+                        }, function (res) {
+                            console.log(res)
+                        }
+                    )
+                },
+                query_inventory: function (cinvccode) {
+                    this.$http.get('/query_inventory?cinvccode=' + cinvccode).then(
+                        function (res) {
+                            console.log(res)
+                            this.inventorys = res.body
+                        }, function (res) {
+                            console.log(res)
+                        }
+                    )
+                },
+                query_oneinv: function () {
+                    var cinvcode = document.getElementById('search_inv').value
+                    this.$http.get('/query_oneinv?cinvcode=' + cinvcode).then(
+                        function (res) {
+                            console.log(res)
+                            this.inventorys = res.body
+                        }, function (res) {
+                            console.log(res)
+                        }
+                    )
+                },
+            }
+        })
+    }
+</script>
+</body>
+</html>
