@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <label for="r1">修改颜色</label>
+    <input type="checkbox" v-model="use" id="r1">
+    <br><br>
+    <div v-bind:class="{'class1':use}">
+        v-bind:class 指令
+    </div>
+    <pre><a v-bind:href="url">菜鸟教程</a></pre>
+    <div v-on:click="dome"  style="background-color: aqua">33ss</div>
+    <p v-text="message"></p>
+    <input type="text" v-model="message">
+{% endblock %}

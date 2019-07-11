@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <!-- ÐÂ Bootstrap4 ºËÐÄ CSS ÎÄ¼þ -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/zyscss.css">
     <!-- jQueryÎÄ¼þ¡£Îñ±ØÔÚbootstrap.min.js Ö®Ç°ÒýÈë -->
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <!-- popper.min.js ÓÃÓÚµ¯´°¡¢ÌáÊ¾¡¢ÏÂÀ­²Ëµ¥ -->
@@ -21,13 +22,10 @@
     {% endif %}
 </head>
 <body>
-<div class="container-fluid" id="app">
+<div class="container" id="app">
     {% block content %}
     {% endblock %}
 </div>
-<script>
-    {% block script %}
-    {% endblock %}
-</script>
+<script src="../static/zysjs.js"></script>
 </body>
 </html>
