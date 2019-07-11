@@ -1,0 +1,18 @@
+v-html="<h1>aaa</h1>" 会解释html标记。
+v-bind:class="class",指定元素类名。
+v-bind:id="id",指定元素id名，双引号里都可以是变量。
+v-bind:herf="url",指定网址。等于:herf="url"
+v-if="func",如果真，显示元素，否则不显示。后面可以跟
+        v-else=""或v-else-if=""
+v-on:click="desomething",点击事件处理函数dosomething.等于@click="desomething"
+v-show="",感觉类似于v-if
+v-for="site in sites",循环输出,配合flask可以用v-text,
+v-for="(value,key) in objects",遍历对象，值在前，键在后,
+    跟v-text配合使用时位v-text="key+':'+value"这种操作。
+v-for="(key,value,index) in sites" v-text="index+1+'.'+value+':'+key">
+v-for="n in 5" 从1到5.
+v-text=""里面可以使用函数返回值,并且函数可以传参数
+    v-text="rmessage(site)"
+v-model=""绑定变量，根据变量值的变化而变化
+computed属性在“VM对象”没变化时会直接读取缓存而不再重新计算。
+watch属性监听变量值的变化，如果变化，就把值传给值同名的函数处理。
