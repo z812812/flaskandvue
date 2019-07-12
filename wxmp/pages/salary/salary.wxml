@@ -1,0 +1,22 @@
+<!--pages/salary/salary.wxml-->
+
+<view class='container'>
+  <image class='avatarUrl' src='{{avatarUrl}}'></image>
+  <view class='nickName'>{{nickName}}</view>
+  <view class='address'>
+    <view class='province'>{{province}}</view>
+    <view class='city'>{{city}}</view>
+  </view>
+
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <input class='button' name="personid" placeholder="请输入身份证号码" />
+    <button class='binding' form-type='submit'>绑定身份证</button>
+  </form>
+
+
+  
+
+<view  class='bindingbbs' bindtap='bbs' >
+通知
+</view>
+</view>

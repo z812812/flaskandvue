@@ -1,0 +1,10 @@
+<!--pages/bbs/bbs.wxml-->
+<view class='container'>
+<view class='title'>{{title}}</view>
+<ad unit-id="adunit-f5e9046585358e0b"></ad>
+
+<text class='content'>{{content}}</text>
+
+
+
+</view>

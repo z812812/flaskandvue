@@ -1,0 +1,13 @@
+<view class='detail-title' bindtap='refreshdata'>工资明细</view>
+ <ad unit-id="adunit-f5e9046585358e0b"></ad>
+<view class='gzdetails'>
+  <block wx:for="{{details}}" wx:key='index'>
+    <view class='mx'>
+      <text class='inde' wx:if="{{item}}">{{index}}</text>
+      <text class='value' wx:if="{{item}}">{{item}}</text>
+    </view>
+
+  </block>
+
+  <ad unit-id="adunit-f5e9046585358e0b"></ad>
+</view>

@@ -1,0 +1,22 @@
+/* pages/bbs/bbs.wxss */
+.container {
+  flex-direction: column;
+  letter-spacing: 2rpx;
+  
+
+}
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 80rpx
+
+}
+
+
+
+
+.content {
+  margin-left: 20rpx;
+  text-align: left;
+
+}

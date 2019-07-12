@@ -1,0 +1,39 @@
+.index-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index-container .logo {
+  margin-top: 100rpx;
+  width: 500rpx;
+  height: 300rpx
+}
+
+.index-container .start{
+  margin-top: 300rpx;
+  
+}
+
+.index-container .button{
+  border: 2px solid red;
+  background-color:white;
+  padding-left:150rpx ;
+  padding-right: 150rpx
+}
+
+.index-container .msg{
+  margin-top: 100rpx;
+  background-color: gold;
+  height: 100rpx;
+  width:500rpx;
+  text-align: center
+}
+
+.index-container .shuoming{
+  margin-top:100rpx; 
+}
+
+.money {
+  margin-top: 30rpx
+}

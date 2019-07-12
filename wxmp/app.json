@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/salary/salary",
+    "pages/query/query",
+    "pages/other/other",
+    "pages/wgdQuery/wgdQuery",
+    "pages/queryqgb/queryqgb",
+    "pages/ranklist/ranklist",
+    "pages/bbs/bbs"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "新兴齿轮",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/salary/salary",
+        "text": "设置",
+        "iconPath": "pages/common/img/title.png",
+        "selectedIconPath": "pages/common/img/titleselect.png"
+      },
+      {
+        "pagePath": "pages/query/query",
+        "text": "工资明细",
+        "iconPath": "pages/common/img/title.png",
+        "selectedIconPath": "pages/common/img/titleselect.png"
+      },
+      {
+        "pagePath": "pages/other/other",
+        "text": "其他查询",
+        "iconPath": "pages/common/img/title.png",
+        "selectedIconPath": "pages/common/img/titleselect.png"
+      }
+     
+    ],
+    "color": "#000000",
+    "selectedColor": "#FF0000",
+    "borderStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

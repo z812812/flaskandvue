@@ -1,0 +1,42 @@
+.all {
+  display: flex;
+  flex-direction: column;
+  border: 1rpx solid red;
+}
+
+.sigle {
+  display: flex;
+  flex-direction: column;
+  border: 8rpx solid #000080;
+  padding: 5px;
+  margin: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid red;
+  padding: 5px;
+}
+
+.index {
+  width: 200rpx;
+  border: 0.5rpx solid red;
+  text-align: center;
+}
+
+.detail {
+  width: 530rpx;
+  border: 0.5rpx solid red;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+}
+.page {
+  font-size: 25rpx;
+  text-align: center;
+  font-weight: 700
+}

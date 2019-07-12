@@ -1,0 +1,15 @@
+/* pages/ranklist/ranklist.wxss */
+.test {
+  text-align: center;
+  border: 3rpx solid red;
+  font-size: 100rpx;
+  margin-top: 100rpx
+}
+
+.test2 {
+  text-align: center;
+  border: 3rpx solid red;
+  font-size: 100rpx;
+  margin-top: 20rpx
+}
+

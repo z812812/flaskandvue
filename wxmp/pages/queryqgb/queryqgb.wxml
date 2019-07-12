@@ -1,0 +1,15 @@
+<view class='title'>{{title}}</view>
+<view class='all'>
+
+  <block wx:for="{{details}}" wx:key='index3'>
+    <view class='sigle'>
+      <block wx:for="{{item}}" wx:key='index4' wx:for-item="detail">
+        <view class='container'>
+          <view class='index'>{{index}}</view>
+          <view class='detail'>{{detail}}</view>
+        </view>
+      </block>
+    </view>
+  </block>
+
+</view>

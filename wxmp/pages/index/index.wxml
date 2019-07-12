@@ -1,0 +1,12 @@
+<!--pages/index/index.wxml-->
+<view class='index-container'>
+  <view>
+    <image class='logo' src='../common/img/logo.png'></image>
+  </view>
+  
+  <view class='start'>
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" class='button' bindgetuserinfo="bindGetUserInfo">开始使用</button>
+  <view wx:else>请升级微信版本</view>
+  </view>
+  <ad unit-id="adunit-f5e9046585358e0b" class='money'></ad>
+</view>

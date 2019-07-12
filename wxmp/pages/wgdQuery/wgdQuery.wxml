@@ -1,0 +1,20 @@
+<!--pages/wgdQuery/wgdQuery.wxml-->
+<view class='content' bindtouchstart='touchStart' bindtouchend="touchEnd">
+<view class='title'>{{title}}</view>
+ <ad unit-id="adunit-f5e9046585358e0b"></ad>
+<view class='all'>
+
+  <block wx:for="{{details}}" wx:key='index'>
+    <view class='sigle'>
+      <block wx:for="{{item}}" wx:key='index2' wx:for-item="detail">
+        <view class='container'>
+          <view class='index'>{{index}}</view>
+          <view class='detail'>{{detail}}</view>
+        </view>
+      </block>
+    </view>
+  </block>
+
+</view>
+<view class='page'>第{{page}}页共{{allpage}}页(左滑翻页)</view>
+</view>

@@ -1,0 +1,7 @@
+<view class='test'>
+本月计件数量合计：{{qty}}件
+</view>
+<ad unit-id="adunit-f5e9046585358e0b"></ad>
+<view class='test2'>
+计件工资大概在{{gz}}上下
+</view>

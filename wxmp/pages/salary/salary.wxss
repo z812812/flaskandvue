@@ -1,0 +1,50 @@
+/* pages/salary/salary.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .avatarUrl {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+}
+
+.container .binding {
+  margin-top: 30rpx;
+  border: 2px solid red;
+  background-color: white;
+  padding-left: 150rpx;
+  padding-right: 150rpx;
+}
+
+.container .address {
+  display: flex;
+  flex-direction: row;
+}
+
+.container .address .city {
+  margin-left: 50rpx;
+}
+
+.button {
+  border: 1rpx solid #eee;
+  margin-top: 50rpx;
+  text-align: center;
+}
+
+.bindingbbs {
+  margin-top:150rpx;
+  border:2px solid red;
+  background-color: white;
+  padding-left: 150rpx;
+  padding-right: 150rpx;
+  padding-top: 20rpx;
+  border-radius: 5%;
+  height: 80rpx;
+  width: 170rpx;
+  text-align: center;
+  
+}

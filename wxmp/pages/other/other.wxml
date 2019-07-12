@@ -1,0 +1,27 @@
+<!--pages/other/other.wxml-->
+<ad unit-id="adunit-f5e9046585358e0b"></ad>
+<view class='container'>
+  <view bindtap='wgdQuery' class='wgdQuery'>完工单明细查询</view>
+  <view bindtap='wgd_sum_query' class='wgdsumquery'>完工单合计查询</view>
+  <view bindtap='adm' class='wgdsumquery'>计件工资</view>
+  <view bindtap='adc' class='wgdsumquery'>单天排行榜</view>
+
+
+  <!-- <view class="QGBQuery">
+    <input bindinput='bindGetInputValues' placeholder='请输入请购单号' />
+    
+  </view>
+  <view bindtap='QGBQuery' class='QGBQuery'>请购进度查询</view> -->
+
+
+</view>
+
+
+
+<view class='alltext'>
+  <view class='dtext dtext1'>计件工资查询：该查询为实时查询。结果用100取整，不是准确工资，本人不对该信息准确性负责，仅供参考。</view>
+  <view class='dtext'>说明:该查询时间段为本月计件数量，即从上月26号至本月25号的计件数量,分合计和明细。</view>
+  <view class='dtext'>例1：今天4.21号，查询时间段为3.26-4.25</view>
+  <view class='dtext'>例2：今天4.30号，查询时间段同样为3.26-4.25</view>
+  <view class='dtext'>例3：今天5.1号，查询时间段才会变成为4.26-5.25</view>
+</view>

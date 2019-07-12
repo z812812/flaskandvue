@@ -1,0 +1,3 @@
+<template name="salaryDetails">
+<text>{{index}}:{{item}}</text>
+</template>
