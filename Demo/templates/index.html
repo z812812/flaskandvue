@@ -15,9 +15,18 @@
     {#            <li v-for="(key,value,index) in sites" v-text="index+1+'.'+value+':'+key"></li>#}
     {#        </ol>#}
     {#    <button @click="dome">确定</button>#}
-    <tr v-for="iphone in iphones">
-        <td>[[ iphone.id ]]</td>
-        <td>[[ iphone.name ]]</td>
-        <td>[[ iphone.price ]]</td>
-    </tr>
+{#    <div v-for="iphone in iphones">#}
+{#    <p>[[iphone.name]]</p>#}
+{#    <button v-bind:disabled="iphone.count === 0" v-on:click="iphone.count-=1">-</button>#}
+{#    [[iphone.count]]#}
+{#    <button  v-on:click="iphone.count+=1">+</button>#}
+{#    </div>#}
+{#    <div>总价[[sumprice()]]</div>#}
+{#    <select v-model="mys">#}
+{#        <option v-for="i in da" v-bind:value="i">[[i]]</option>#}
+{#    </select>#}
+{#    <p>[[mys]]</p>#}
+  <button class="btn btn-primary" @click="change">更新</button>
+{#    <input v-model.lazy="msg" >#}
+
 {% endblock %}
