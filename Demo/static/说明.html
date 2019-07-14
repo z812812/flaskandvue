@@ -74,3 +74,13 @@ alert("formdata："+JSON.stringify(params));
     {#    <p>[[mys]]</p>#}
 
     {#    <input v-model.lazy="msg" >#}
+
+print sheet2.cell(1,0).value.encode('utf-8')
+  print sheet2.cell_value(1,0).encode('utf-8')
+  print sheet2.row(1)[0].value.encode('utf-8')
+
+  # 获取单元格内容的数据类型
+  print sheet2.cell(1,0).ctype
+
+if __name__ == '__main__':
+

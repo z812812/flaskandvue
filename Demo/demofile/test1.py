@@ -1,3 +1,2 @@
-a='小程序的.txt'
-b=a.rsplit('.',1)[-1]
-print(b)
+for i in range(10):
+    print(i)

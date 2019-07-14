@@ -1,5 +1,7 @@
 from flask import Flask, render_template,request
 import os
+from myExcel import xlrd_tosqlserver
+
 app = Flask(__name__)
 
 
@@ -15,8 +17,9 @@ def upload():
     filename=file.filename
     if file:
         file.save(os.path.join('\\up.{}'.format(filename.rsplit('.',1)[-1])))
+        xlrd_tosqlserver(r"f:\up.xls")
     print('have a file be uplaod')
-    return render_template("changeOrdersDate.html",**{'title':'更改订单日期'})
+    return render_template("changeOrdersDate.html",**{'title':'更改订单日期','message':'更改成功'})
 
 
 if __name__ == "__main__":
