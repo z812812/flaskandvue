@@ -1,0 +1,25 @@
+wx230ba8f4dec1fb33  4c785df4866367195e68242d5fe7b06f  15215121363@sina.cn   15215121363@163.com  zys155182952@163.com  id=wx77155992d429a00e samesecret  a6's secret is Seeyon_123
+firewall secret xx@163.com  admin@123 ebackup's password
+
+
+阿凡达数据 appkey:a13dc23c27274b3e89d1cfba39931c17
+
+
+as
+xxgear2018
+
+github 250132170@qq.com 用户名 longsecret
+
+router port 4433 huaweisamesecret
+
+firewall https://192.168.16.168:8443/default.html# xx@163.com
+
+
+ThisPasswordIsNotVeryLong20  
+ThisPasswordIsVeryLong20
+
+https://192.168.16.22:9801/index.html
+
+https://192.168.16.168:8443/default.html#
+https://192.168.16.169:8443/default.html#主firewall 上进下出
+https://192.168.16.1:4433/view/loginPro.html 1wlan 2pppoe 3ip

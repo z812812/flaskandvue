@@ -16,7 +16,7 @@ def upload():
     file=request.files['file']
     filename=file.filename
     if file:
-        file.save(os.path.join('\\up.{}'.format(filename.rsplit('.',1)[-1])))
+        file.save(r"f:\up.xls")
         xlrd_tosqlserver(r"f:\up.xls")
     print('have a file be uplaod')
     return render_template("changeOrdersDate.html",**{'title':'更改订单日期','message':'更改成功'})
