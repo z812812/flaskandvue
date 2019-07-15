@@ -1,0 +1,1 @@
+exec zyslrp 0,1,' And  1=1   And ((i.cInvCode >= N''140000000'') And (i.cInvCode <= N''149999999'')) And (n.PlanQty - n.CrdQty > 0 or 1 = N''0'') And (n.ManualFlag IN (N''0'',N''1'')) And (n.PlanQty > 0 or 1 = N''1'') And (n.status <>4 or 1 = N''0'')','','','','' 

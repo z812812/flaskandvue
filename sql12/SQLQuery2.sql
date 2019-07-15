@@ -1,0 +1,1 @@
+select top 1 * from ufsystem..UA_OAMapU8 where cAccID=N'003'

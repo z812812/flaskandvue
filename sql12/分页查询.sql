@@ -1,0 +1,1 @@
+select * from (select ROW_NUMBER() over (order by cinvaddcode) aa,* from inventory) b where aa between 0 and 10
