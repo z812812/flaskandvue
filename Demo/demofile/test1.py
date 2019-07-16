@@ -24,7 +24,7 @@ def change(n):
 
 def run_thread(n):
     for i in range(1000000):
-        with threading.Lock():
+        with lock:
             change(n)
 
 print(time.time())
@@ -33,6 +33,7 @@ t2 = threading.Thread(target=run_thread, args=(8,))
 t1.start()
 t2.start()
 t1.join()
-t2.join()
+t1.join()
+
 print(balance)
 print(time.time())
