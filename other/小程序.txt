@@ -23,3 +23,7 @@ https://192.168.16.22:9801/index.html
 https://192.168.16.168:8443/default.html#
 https://192.168.16.169:8443/default.html#主firewall 上进下出
 https://192.168.16.1:4433/view/loginPro.html 1wlan 2pppoe 3ip
+
+https://wenda.so.com/q/1533948636217923
+
+vncserver geometry 1920x1080
