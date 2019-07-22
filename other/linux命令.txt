@@ -1,0 +1,127 @@
+-a (all)显示所有选项，默认不显示LISTEN相关
+-t (tcp)仅显示tcp相关选项
+-u (udp)仅显示udp相关选项
+-n 拒绝显示别名，能显示数字的全部转化成数字。
+-l 仅列出有在 Listen (监听) 的服務状态
+
+-p 显示建立相关链接的程序名
+-r 显示路由信息，路由表
+-e 显示扩展信息，例如uid等
+-s 按各个协议进行统计
+-c 每隔一个固定时间，执行该netstat命令。
+
+mine:netstatu -ap
+mine:netstatu -ap
+mine:netstatu -ap
+mine:netstatu -ap
+mine:netstatu -ap
+mine:netstatu -ap
+mine:netstatu -ap
+
+提示：LISTEN和LISTENING的状态只有用-a或者-l才能看到
+
+ 
+
+top 任务管理器
+d：指定每两次屏幕信息刷新之间的时间间隔。当然用户可以使用s交互命令来改变之。
+
+p:通过指定监控进程ID来仅仅监控某个进程的状态。
+
+q:该选项将使top没有任何延迟的进行刷新。如果调用程序有超级用户权限，那么top将以尽可能高的优先级运行。
+
+S：指定累计模式。
+
+s：使top命令在安全模式中运行。这将去除交互命令所带来的潜在危险。
+
+i：使top不显示任何闲置或者僵死进程。
+
+c:显示整个命令行而不只是显示命令名。
+ps -aux
+-A ：所有的进程均显示出来，与 -e 具有同样的效用；
+-a ： 显示现行终端机下的所有进程，包括其他用户的进程；
+-u ：以用户为主的进程状态 ；
+x ：通常与 a 这个参数一起使用，可列出较完整信息。
+
+ls (list 显示当前目录下文件和目录 ls -l 详细显示 =ll )
+
+[root@linux ~]# cat [-AEnTv]
+参数：
+-A ：相当于 -vET 的整合参数，可列出一些特殊字符～
+-E ：将结尾的断行字符 $ 显示出来；
+-n ：打印出行号；
+-T ：将 [tab] 按键以 ^I 显示出来；
+-v ：列出一些看不出来的特殊字符
+tac 从最后一行开始显示，可以看出 tac 是 cat 的倒着写！
+nl 显示的时候，顺道输出行号！
+
+find / -name filename
+
+rm 移除
+mv 剪切
+cp 复制
+
+whereis which 
+
+ps ( ps aux 查看系统中已经启动的进程, ps aux | grep programe1 ,
+查看程序1是否正在运行
+kill ( kill -9 2325 ,杀死进程号为 2325的进程,
+killall programe1 ,杀死programe1进程 )
+reboot ( 重启系统 )
+init 0 ( 关机 ,仅 root 用户有权操作 )
+init 6 ( 重启系统 ,仅 root 用户有权操作 )
+
+tar -zcvf ( tar -zcvf dir1.tar.gz ./dir1 ,将当前目录下 dir1目录所有内容
+压缩打包,包名dir1.tar.gz )
+tar -zxvf ( tar -zxvf dir1.tar.gz ,解开压缩包 )
+
+gzip ( gzip file1 ,压缩文件 file1 )
+gunzip ( gunzip file1.gz 解压缩文件 file1.gz )
+
+vi file2 ( vi 编即器新建文件 file2)
+...输入内容 welcome..
+( 按 i 进入 insert 状态 即插入模式 ,按 Esc 退出插入模式
+在非插入模式下按 dd 删除光标当前行,按 x 删除当前字,
+按 j,n,l移动光标 )
+:wq ( 保存退出 ) :q! (不保存退出)
+
+
+[root@linux ~]# echo $PATH
+[root@linux ~]# PATH="$PATH":/root
+
+env 显示系统的一些环境变量
+set 显示系统的所有变量
+chmod:
+Linux/Unix 的档案调用权限分为三级 : 档案拥有者、群组、其他。
+利用 chmod 可以藉以控制档案如何被他人所调用。
++ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。
+　 r 表示可读取，w 表示可写入，x 表示可执行，
+
+1. 将档案 file1.txt 设为所有人皆可读取 :
+　　 chmod ugo+r file1.txt 或 chmod 444 file1.txt
+
+2. 将文件 file2 设为属主可读写执行,Group,other ,只能读
+chmod 744 file2 ( 7=> "111" ,4=>"100" 二进制 )
+
+3. 将文件 file3 设为属主可读写执行,Group,other ,无权限操作不能读写执行)
+chmod 700 file3 ( 7=> "111" ,0=>"000" )
+
+其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
+　
+　 r=4，w=2，x=1 若要rwx属性则4+2+1=7； 若要rw-属性则4+2=6；
+若要r-x属性则4+1=5
+
+who 要看目前有谁在在线:
+netstat -a 看网络的联机状态:
+
+dmesg : 例如 dmesg | more 显示系统的诊断信息,操作系统版本号,物理内及其它信息
+df : 例如 df -h 显示硬盘空间
+du : 查看目录中各级子目录使用的硬盘空间
+free: 查看系统内存,虚拟内存(交换空间)的大小占用情况
+top: 动态实时查看系统内存,CPU,进程
+hostname 查看主机名:
+
+hostname 新主机名 修改主机名(临时的,重启就没了):
+man 命令:查看该命令的基础用法
+info 命令:查看该命令的基础用法
+ls -l /lib/modules/`uname -r`/kernel/fs 查看Linux 支持的档案系统有哪些
+cat /proc/filesystems 查看Linux目前已启用的档案系统
