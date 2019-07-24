@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form v-show="dis">
+        <input type="text" value="" v-model="name" placeholder="请输入用户名">
+        <input type="text" value="" v-model="age" placeholder="请输入年龄">
+        <input type="file" id="file">
+        <div @click="aa()">提交</div>
+    </form>
+    <div >[[output]]</div>
+    <div id="oo" @click="oo">123123</div>
+
+
+
+{% endblock %}

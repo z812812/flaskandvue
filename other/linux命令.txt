@@ -10,6 +10,9 @@
 -s 按各个协议进行统计
 -c 每隔一个固定时间，执行该netstat命令。
 
+ls -ln列出当前文件夹下明细
+ln -s 源文件 目标文件。-s软连接
+
 mine:netstatu -ap
 mine:netstatu -ap
 mine:netstatu -ap

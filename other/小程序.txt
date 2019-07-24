@@ -27,3 +27,7 @@ https://192.168.16.1:4433/view/loginPro.html 1wlan 2pppoe 3ip
 https://wenda.so.com/q/1533948636217923
 
 vncserver geometry 1920x1080
+
+
+xxgear  xx@163.com http://www.beian.gov.cn/portal/index?token=afec8a17-a7b5-4dbb-a6d4-60223aac4e37&info=%E6%B3%A8%E5%86%8C%E6%88%90%E5%8A%9F%EF%BC%81
+ÍøÕ¾±¸°¸
