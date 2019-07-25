@@ -1,0 +1,10 @@
+git status 查看resp状态
+git add 《文件或文件夹》 添加进缓存
+git commit -m "说明" 提交更改，生成新版本
+git push 推送到远程仓库
+git pull 从远处仓库拉取
+
+新建仓库
+git init
+
+新建仓库后设置 用户名和密码，在github上增加SSH密钥，其他设置在feat1里的22.txt里。
