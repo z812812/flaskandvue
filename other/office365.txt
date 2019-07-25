@@ -1,2 +1,3 @@
-d8467@ioffice.sitePbu75182
+d8467@ioffice.site
+大写前3个字母，同APPleID
 password zyisoffice.split('e')[0]
